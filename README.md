@@ -14,6 +14,7 @@
 
 - Download/Clone Repo-
 - Install Dependencies - npm install
+- Add CLIENT_KEY and CLIENT_SECRET in the .env file
 - Start server - node app.js
 
 ## How to use the app:
