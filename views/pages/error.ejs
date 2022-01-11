@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- head.ejs -->
+    <%- include('../partials/head');%>
+    <link rel="stylesheet" href="/css/app.css" />
+    <title>Error - <%= errorMessage %></title>
+  </head>
+  <body class="d-flex h-100 text-center text-white bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="mb-auto">
+        <!-- header.ejs -->
+        <%- include('../partials/header');%>
+      </header>
+      <div class="container-fluid content">
+        <h1>Oops!</h1>
+        <% if (errorMessage.includes('401')) { %>
+            <h3>Access Token Expired </h3>
+            <br>
+            <form action="/token">
+              <input class="btn btn-primary" type="submit" value="Get Access Token" />
+            </form>
+            <% console.log('true');%> 
+            <% } else { %>
+              <h3><%= errorMessage %></h3>
+              <br />
+              <form action="/app">
+                <input class="btn btn-primary" type="submit" value="Try Again" />
+              </form>
+            <% } %> 
+      </div>
+      <div class="container-fluid footer">
+        <footer class="mt-auto text-white-50 footer">
+          <!-- footer.ejs -->
+          <%- include('../partials/footer')%>
+        </footer>
+      </div>
+    </div>
+    <!-- footer.ejs -->
+    <%- include('../partials/scripts')%>
+  </body>
+</html>

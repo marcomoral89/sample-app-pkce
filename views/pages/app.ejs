@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- head.ejs -->
+      <%- include('../partials/head');%>
+      <link rel="stylesheet" href="/css/app.css" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <title>Sample App</title>
+   </head>
+   <body class="d-flex h-100 text-center text-white bg-dark">
+      <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+         <header class="mb-auto">
+            <!-- header.ejs -->
+            <%- include('../partials/header');%>
+         </header>
+         <div class="container-fluid content mb-5">
+            <% if (tokenValidation == true) { %>
+            <h1>Let's make an API call:</h1>
+            <span 
+               class="badge bg-success"
+               id="tokenSuccess"
+               data-bs-toggle="tooltip" 
+               title="The app has retrieved an access token" 
+               data-bs-placement="top"
+               >Access Token Ready</span>
+            <% } else { %>
+            <h1>Oops! Unable to make an API call:</h1>
+            <span 
+               class="badge bg-danger"
+               id="tokenError"
+               data-bs-toggle="tooltip" 
+               title="Install the app to retrieve an Access Token" 
+               data-bs-placement="top"
+               >No Access Token</span>
+            <% } %>
+            <div class="container" id="app-container">
+               <form action="/app" method="post" id="selectFlowForm" class="needs-validation" novalidate>
+                  <label for="exampleFormControlInput1" class="form-label"
+                     >Method</label
+                     >
+                  <select id="apiMethod" class="form-select mb-3" name="method">
+                     <option value="get">GET</option>
+                     <option value="post">POST</option>
+                     <option value="delete">DELETE</option>
+                     <option value="put">PUT</option>
+                  </select>
+                  <label for="exampleFormControlInput1" class="form-label"
+                     >Endpoint</label
+                     >
+                  <input
+                     type="text"
+                     id="basic-url"
+                     class="form-control mb-3"
+                     name="baseUrl"
+                     value="https://api.thinkific.com/api/public/v1/users?page=1&limit=25"
+                     id="validationCustom05" required
+                     />
+                  <div class="invalid-feedback alert alert-danger">
+                     Please input an API endpoint.
+                  </div>
+                  <label class="form-label"
+                     >Body Parameters (Optional)
+                  <span 
+                     class="badge bg-secondary collapseParams mb-3"
+                     for="exampleFormControlInput1"
+                     data-bs-toggle="collapse"
+                     href="#collapseExample"
+                     role="button"
+                     aria-expanded="false"
+                     aria-controls="collapseExample"
+                     ">Click Me</span>
+                  </label>
+                  <div class="collapse" id="collapseExample">
+                     <textarea
+                        name="bodyParams"
+                        class="form-control mb-3"
+                        rows="8"
+                        placeholder="JSON Format"
+                        ></textarea>
+                  </div>
+                  <button 
+                     type="submit" 
+                     class="btn btn-primary"
+                     id="appButton"
+                     >Submit</button>
+               </form>
+            </div>
+         </div>
+         <div class="container-fluid footer">
+            <footer class="mt-auto text-white-50 footer">
+               <!-- footer.ejs -->
+               <%- include('../partials/footer')%>
+            </footer>
+         </div>
+      </div>
+      <!-- footer.ejs -->
+      <%- include('../partials/scripts')%>
+      <script src="/scripts/app.js"></script>
+   </body>
+</html>

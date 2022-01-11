@@ -1,0 +1,46 @@
+.content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.nav-link {
+  color: white;
+}
+
+.nav-link:focus,
+.nav-link:hover,
+.nav-link:active {
+  color: crimson;
+}
+
+.form-label {
+  display: block;
+  text-align: left;
+}
+
+#app-container {
+  max-width: 60rem;
+}
+
+#response {
+  width: 90%;
+  height: 30rem;
+  margin: 2rem auto 0 auto;
+  background: white;
+  color: black;
+  text-align: center;
+}
+
+.table > :not(caption) > * > * {
+  padding: 2.5rem 0.5rem;
+}

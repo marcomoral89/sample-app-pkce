@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- head.ejs -->
+    <%- include('../partials/head');%>
+    <link rel="stylesheet" href="/css/app.css" />
+    <title>Success - Results</title>
+  </head>
+  <body class="d-flex h-100 text-center text-white bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="mb-auto">
+        <!-- header.ejs -->
+        <%- include('../partials/header');%>
+      </header>
+      <div class="container-fluid">
+        <h1><%= respData.length %> Results:</h1>
+        <div class="overflow-scroll mb-3" id="response">
+          <table class="table table-hover">
+            <% for(var i=0; i < respData.length; i++) { %>
+            <tr>
+              <td><%= [i+1]%>.</td>
+              <td><%= JSON.stringify(respData[i],null,'\t') %></td>
+            </tr>
+            <% } %>
+          </table>
+        </div>
+        <form action="/app">
+          <input class="btn btn-primary" type="submit" value="Go Back" />
+        </form>
+      </div>
+      <div class="container-fluid footer">
+        <footer class="mt-auto text-white-50 footer">
+          <!-- footer.ejs -->
+          <%- include('../partials/footer')%>
+        </footer>
+      </div>
+    </div>
+    <!-- footer.ejs -->
+    <%- include('../partials/scripts')%>
+  </body>
+</html>

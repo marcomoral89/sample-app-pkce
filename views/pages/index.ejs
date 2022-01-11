@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- head.ejs -->
+      <%- include('../partials/head');%>
+      <link rel="stylesheet" href="/css/index.css" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <title>Welcome - Install</title>
+   </head>
+   <body class="d-flex h-100 text-center text-white bg-dark">
+      <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+         <header class="mb-auto">
+            <!-- header.ejs -->
+            <%- include('../partials/header');%>
+         </header>
+      </div>
+      <div class="container-fluid content">
+         <% if (tokenValidation == true) { %>
+            <h1 id="tokenError">App Installed:</h1>
+            <% } else { %>
+            <h1 id="tokenError">How to Install:</h1>
+            <% } %>
+         <br>
+         <p>
+            To imitate the Thinkific App Store install flow, append your 
+            <button 
+               type="button" 
+               class="btn badge bg-secondary" 
+               data-bs-toggle="tooltip" 
+               title="Your subdomain is what appears before .thinkific.com in your site URL. For example, if my URL was mysite.thinkific.com, the subdomain would be mysite."" 
+               data-bs-placement="top">
+            Thinkific Subdomain
+            </button>
+            to the <a class="link-info" href="https://developers.thinkific.com/building-apps/creating-an-app/#installing-your-app-from-thinkifics-app-store">install url</a>:
+            <br>
+            <code>Example: http://localhost:8080/install?subdomain=thinkeroo</code>
+         <h3>OR</h3>
+         <p>Input your 
+            <button 
+               type="button" 
+               class="btn badge bg-secondary"  
+               data-bs-toggle="tooltip" 
+               title="Your subdomain is what appears before .thinkific.com in your site URL. For example, if my URL was mysite.thinkific.com, the subdomain would be mysite."" 
+               data-bs-placement="top">
+            Thinkific Subdomain
+            </button>
+            and hit install.
+         </p>
+         <form action="/" method="post" class="needs-validation" novalidate>
+            <div class="input-group mb-3" id="subdomainInput">
+               <span class="input-group-text" id="basic-addon2">https://</span>
+               <input
+                  type="text"
+                  placeholder="thinkeroo.thinkific.com"
+                  name="subdomain"
+                  class="form-control"
+                  id="validationCustom05" required
+                  />
+               <button type="submit" id="installButton" class="btn btn-primary">Install</button>
+               <div class="invalid-feedback alert alert-danger">
+                  Please provide a Thinkific Subdomain.
+               </div>
+            </div>
+         </form>
+      </div>
+      </div>
+      <div class="container-fluid footer">
+         <footer class="mt-auto text-white-50 footer">
+            <!-- footer.ejs -->
+            <%- include('../partials/footer')%>
+         </footer>
+      </div>
+      <!-- footer.ejs -->
+      <%- include('../partials/scripts')%>
+      <script src="/scripts/index.js"></script>
+   </body>
+</html>
