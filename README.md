@@ -1,23 +1,24 @@
 # sample-app
 
 Tech Stack:
+
 - Node
 - Express.js
 - EJS
 - Bootsrap 5
 
+Thinkific OAuth Flow:
 
-Thinkific OAuth Flow: 
-- Authorization Code Flow - https://developers.thinkific.com/api/authorization/#authorization-code-flow
-
+- PKCE - https://developers.thinkific.com/api/authorization/#authorization-code-flow-with-pkce
 
 Instructions:
-- Download/Clone Repo- 
+
+- Download/Clone Repo-
 - Install Dependencies - npm install
 - Start server - node app.js
 
-
 How to use the app:
+
 - Go to the index page
 - Install the app to your Thinkific site
 - An access token is generated and stored
