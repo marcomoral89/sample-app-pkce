@@ -9,6 +9,7 @@ Tech Stack:
 
 Thinkific OAuth Flow:
 
+Thinkific OAuth Flow: 
 - PKCE - https://developers.thinkific.com/api/authorization/#authorization-code-flow-with-pkce
 
 Instructions:
