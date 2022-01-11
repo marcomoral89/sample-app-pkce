@@ -8,21 +8,23 @@
 - Bootsrap 5
 
 ## Thinkific OAuth Flow:
+
 - PKCE: https://developers.thinkific.com/api/authorization/#authorization-code-flow-with-pkce
 
 ## Pre-requisites
+
 - Partner Portal account: https://www.thinkific.com/partners/
 
 ## Instructions:
 
 - **Partner Portal**: Create an app to get a **CLIENT_KEY** and **CLIENT_SECRET**
-- **Github**: Download zip
-- **Terminal**: Go to Sample App's directory and run **npm install**
+- **Github**: Download sample app files
+- **Terminal**: Go to sample app's directory and run **npm install**
 - Find and open the **.env** file in the app directory
-- Copy-paste your **.CLIENT_KEY**. and **.CLIENT_SECRET**.
-- Terminal: run **.node app.js**. to start the server
+- Copy-paste your **CLIENT_KEY**. and **CLIENT_SECRET**.
+- **.Terminal**: run **node app.js**. to start the server
 
-## How to use the app:
+## How to use the sample app:
 
 - Go to the index page
 - Install the app to your Thinkific site
