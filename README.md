@@ -22,7 +22,7 @@
 - **Terminal**: Go to sample app's directory and run **npm install**
 - Find and open the **.env** file in the app directory
 - Copy-paste your **CLIENT_KEY**. and **CLIENT_SECRET**.
-- **.Terminal**: run **node app.js**. to start the server
+- **Terminal**: run **node app.js**. to start the server
 
 ## How to use the sample app:
 
