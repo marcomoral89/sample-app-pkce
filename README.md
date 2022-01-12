@@ -18,6 +18,7 @@
 ## Instructions:
 
 - **Partner Portal**: Create an app to get a **CLIENT_KEY** and **CLIENT_SECRET**
+- **Partner Portal**: Add http://localhost:8080/authcodeflow in the **App Settings & Details > Callback URL**
 - **Github**: Download sample app files
 - **Terminal**: Go to sample app's directory and run **npm install**
 - Find and open the **.env** file in the app directory
